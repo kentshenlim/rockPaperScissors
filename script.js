@@ -8,6 +8,7 @@ let stringResponse;
 return stringResponse
 }
 
+
 function playRound(playerSelection, computerSelection) {
 // Play a round of rock paper scissors
 // Input: both typeof string, player choice, then computer choice, case insensitive
@@ -46,3 +47,28 @@ if (result === 0) {
 }
 return stringResult
 } 
+
+
+function checkResponse(str) {
+// Check if valid string input by user when prompted
+// Input: typeof string, user response, either rock or paper or scissors
+// Output: Boolean, true if among 3, case-insensitive
+response = false;
+str = str.toLowerCase();
+if (str === 'rock' || str === 'paper' || str === 'scissors') {
+    response = true;
+}
+return response;
+}
+
+
+function game() {
+// Play 5 rounds, keep scores, return winner
+// Input: none
+// Output: typeof string, describing winner after five rounds
+let playerScore = 0;
+let userInput;
+for (let i = 0; i < 5; i++) {
+    userInput = 5
+}
+}
