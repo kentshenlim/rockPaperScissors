@@ -66,9 +66,26 @@ function game() {
 // Play 5 rounds, keep scores, return winner
 // Input: none
 // Output: typeof string, describing winner after five rounds
-let playerScore = 0;
+let playerScore = 0
+, computerScore = 0;
 let userInput;
+let checkerString;
+let finalResult;
 for (let i = 0; i < 5; i++) {
-    userInput = 5
+    userInput = prompt('Choose either rock, paper or scissors');
+    while (!(checkResponse(userInput))) {
+        userInput = prompt('Check your spelling!\nChoose either rock, paper or scissors');
+    }
+    checkerString = playRound(userInput, getComputerChoice());
+    alert(checkerString);
+    checkerString = (checkerString).substring(0,5);
+    if (checkerString === 'You w') {
+        playerScore++;
+    } else if (checkerString === 'You l') {
+        computerScore++;
+    }
 }
+(playerScore > computerScore) ? finalResult = 'You win!' : (playerScore == computerScore) ? finalResult = 'A tie!' : finalResult = 'You lose!';
+finalResult = finalResult + `${playerScore}:${computerScore}`;
+return finalResult;
 }
