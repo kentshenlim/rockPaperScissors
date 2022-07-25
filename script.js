@@ -86,6 +86,9 @@ for (let i = 0; i < 5; i++) {
     }
 }
 (playerScore > computerScore) ? finalResult = 'You win!' : (playerScore == computerScore) ? finalResult = 'A tie!' : finalResult = 'You lose!';
-finalResult = finalResult + `${playerScore}:${computerScore}`;
+finalResult = finalResult + '\n' + `${playerScore}:${computerScore}`;
 return finalResult;
 }
+
+
+alert(game());
