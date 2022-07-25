@@ -8,7 +8,7 @@ let stringResponse;
 return stringResponse
 }
 
-function playARound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
 // Play a round of rock paper scissors
 // Input: both typeof string, player choice, then computer choice, case insensitive
 // Output: typeof string declaring winner/loser
