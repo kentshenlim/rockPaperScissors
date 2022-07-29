@@ -1,12 +1,22 @@
+function getRandomInt(max) {
+// Input: typeof number, maximum integer inclusive
+// Output: typeof number, any one integer from 1 to max inclusive
+const response = Math.round(Math.random()*(max - 1) + 1);
+return response;
+}
+
+
+
 function getComputerChoice() {
 // Ask for computer's response: rock(1), paper(2) or scissors(3)
 // Input: none
 // Output: typeof string, either 'Rock', 'Paper', or 'Scissors'
-let response = Math.round(Math.random()*(3 - 1) + 1);
+const response = getRandomInt(3);
 let stringResponse;
 (response === 1) ? (stringResponse = 'Rock') : (response === 2) ? (stringResponse = 'Paper') : (stringResponse = 'Scissors');
 return stringResponse
 }
+
 
 
 function playRound(playerSelection, computerSelection) {
@@ -49,7 +59,7 @@ return stringResult
 } 
 
 
-function checkResponse(str) {
+function checkResponse(str) { // This will not be needed in GUI version
 // Check if valid string input by user when prompted
 // Input: typeof string, user response, either rock or paper or scissors
 // Output: Boolean, true if among 3, case-insensitive
@@ -59,10 +69,11 @@ if (str === 'rock' || str === 'paper' || str === 'scissors') {
     response = true;
 }
 return response;
-}
+} 
 
 
-function game() {
+
+function game() { // This will not be needed in GUI version
 // Play 5 rounds, keep scores, return winner
 // Input: none
 // Output: typeof string, describing winner after five rounds
@@ -90,5 +101,3 @@ finalResult = finalResult + '\n' + `${playerScore}:${computerScore}`;
 return finalResult;
 }
 
-
-// alert(game());
