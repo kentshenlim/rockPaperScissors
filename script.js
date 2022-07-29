@@ -106,7 +106,7 @@ return finalResult;
 
 
 function victoryCheck() {
-    if (userScore.textContent !== "5" && computerScore !== "5") return;
+    if (userScore.textContent !== "5" && computerScore.textContent !== "5") return;
     else if (userScore.textContent === "5") {
         resultDescription.textContent = "You won! What a noob lucky dog!";
         resultDescription.style.color = "red";
