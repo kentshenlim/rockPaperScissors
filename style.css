@@ -1,5 +1,4 @@
-html{
-    /*background-image: ;*/
+html {
     font-size: 2em;
 }
 
@@ -13,41 +12,38 @@ html {
 }
 
 
-body{
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('img/background4.jpg');
-    background-position: center;
+    background: url('img/background4.jpg') repeat-x center;
     background-size: contain;
-    background-repeat: repeat-x;
 }
 
 
 .top-plane {
-    /*background-image: url('img/background3.jpg');*/
-    background-position: 0% 3%;
-    background-repeat: repeat-x;
     min-width: 100%;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
 }
 
 
-h1{
+h1 {
     color: #AA6F39;
     font-family: serif;
     max-width: 50%;
+    min-width: fit-content;
     text-align: center;
     margin: 0 auto;
     background-image: url('img/background3.jpg');
     border-radius: 1em;
+    border: #2D882D solid 5px;
 }
 
 
 img {
-    height: 220px;
-    border: black solid 3px;
+    height: 85%;
+    border: #2D882D solid 5px;
     border-radius: 1em;
 }
 
@@ -69,18 +65,72 @@ img {
 }
 
 
-.player-panel {
-    border-right: black dashed 3px;
-}
-
-
-.computer-panel {
-    border-left: black dashed 3px;
-}
-
-
 .A{
     display: flex;
     min-width: 100%;
     justify-content: space-around;
+}
+
+
+.bottom-plane {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+
+.people,
+.result {
+    display: flex;
+}
+
+
+.people div {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: serif;
+}
+
+
+.people .player {
+    background-color: #55AA55;
+    text-align:center;
+} 
+
+
+.people .PC {
+    background-color: #88CC88;
+}
+
+
+.result {
+    justify-content: space-between;
+    margin-top: 1%;
+}
+
+
+.bottom-plane,
+.mid-plane,
+.top-plane {
+    flex: 1 1 auto;
+}
+
+
+.score {
+    border: #2D882D solid 5px;
+    margin: 0 2%;
+    width: 2%;
+    height: 2%;
+    text-align: center;
+}
+
+
+.score.player {
+    background-color: #55AA55
+}
+
+
+.score.computer {
+    background-color: #88CC88
 }
