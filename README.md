@@ -8,3 +8,4 @@ scissor.jpeg: https://megaman.fandom.com/wiki/Cut_Man
 rock2.png, paper2.png, scissor2.png : https://towardsdatascience.com/building-a-rock-paper-scissors-ai-using-tensorflow-and-opencv-d5fc44fc8222
 background3.jpg: https://www.istockphoto.com/illustrations/background-of-rock-paper-scissors
 background4.jpg: https://www.wallpaperflare.com/three-rock-paper-scissor-hand-signs-green-background-dark-wallpaper-sqhmq;
+mute.png: https://flyclipart.com/mute-icon-mute-png-76074
