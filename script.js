@@ -91,4 +91,4 @@ return finalResult;
 }
 
 
-alert(game());
+// alert(game());
