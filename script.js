@@ -103,3 +103,15 @@ return finalResult;
 
 
 
+const clickableImageList = document.querySelectorAll("img.clickable");
+const resultDescription = document.querySelector(".result>.description");
+clickableImageList.forEach(eachImage => {
+    eachImage.addEventListener('click', (e) => {
+        const userChoice = e.srcElement.alt; // Wrong case, but fine as playRound case-insensitive
+        const computerChoice = getComputerChoice();
+        const txt = playRound(userChoice, computerChoice);
+        resultDescription.textContent = txt;
+    })
+})
+
+
