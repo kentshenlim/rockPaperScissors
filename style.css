@@ -1,4 +1,29 @@
-img{
+html{
+    /*background-image: ;*/
+    font-size: 1.5em;
+}
+
+
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+    'Lucida Sans', Arial, sans-serif;
+}
+
+
+body{
+    min-height: 100vh;
+}
+
+
+img {
     height: 220px;
     border: black solid 3px;
+}
+
+
+h1 {
+    font-size: 2em;
 }
