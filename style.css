@@ -15,15 +15,31 @@ html {
 
 body{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 img {
     height: 220px;
     border: black solid 3px;
+    border-radius: 1em;
 }
 
 
 h1 {
     font-size: 2em;
+}
+
+
+.mid-plane{
+    display: flex;
+}
+
+
+.player-panel,
+.computer-panel {
+    display: flex;
+    flex-direction: column;
 }
