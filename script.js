@@ -103,14 +103,28 @@ return finalResult;
 
 
 
+function victoryCheck() {
+    if (userScore.textContent === "5") {
+        resultDescription.textContent = "You won!";
+    }
+    else if (computerScore.textContent === "5") {
+        resultDescription.textContent = "You lose!";
+    }
+}
+
+
 const clickableImageList = document.querySelectorAll("img.clickable");
 const resultDescription = document.querySelector(".result>.description");
+const userScore = document.querySelector(".player.score");
+const computerScore = document.querySelector(".computer.score");
+
 clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('click', (e) => {
         const userChoice = e.srcElement.alt; // Wrong case, but fine as playRound case-insensitive
         const computerChoice = getComputerChoice();
         const txt = playRound(userChoice, computerChoice);
         resultDescription.textContent = txt;
+        victoryCheck();
     })
 })
 
