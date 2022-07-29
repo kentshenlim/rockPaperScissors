@@ -149,3 +149,15 @@ img {
 .score.computer {
     background-color: #88CC88
 }
+
+
+div.restart {
+    align-self: center;
+}
+
+
+button {
+    font-size: 1em;
+    border-radius: 0.5em;
+    background-color:#2D882D;
+}

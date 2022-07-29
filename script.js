@@ -41,9 +41,11 @@ switch (true) {
     case (playerSelection === 'Paper' && computerSelection === 'Rock'):
     case (playerSelection === 'Scissors' && computerSelection === 'Paper'):
         result = 1;
+        userScore.textContent = +userScore.textContent + 1;
         break;
     default:
         result = -1;
+        computerScore.textContent = +computerScore.textContent + 1;
 }
 
 // Return a string of result
@@ -104,11 +106,13 @@ return finalResult;
 
 
 function victoryCheck() {
-    if (userScore.textContent === "5") {
-        resultDescription.textContent = "You won!";
-    }
-    else if (computerScore.textContent === "5") {
-        resultDescription.textContent = "You lose!";
+    if (userScore.textContent !== "5" && computerScore !== "5") return;
+    else if (userScore.textContent === "5") {
+        resultDescription.textContent = "You won! What a noob lucky dog!";
+        resultDescription.style.color = "red";
+    } else if (computerScore.textContent === "5"){
+        resultDescription.textContent = "You lose! What a noob!";
+        resultDescription.style.color = "red";
     }
 }
 
