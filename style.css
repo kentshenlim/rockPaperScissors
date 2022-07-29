@@ -35,6 +35,8 @@ h1 {
 
 .mid-plane{
     display: flex;
+    min-width: 100%;
+    justify-content: space-evenly;
 }
 
 
@@ -42,4 +44,16 @@ h1 {
 .computer-panel {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+
+.player-panel{
+    border-right: black dashed 3px;
+}
+
+
+.computer-panel{
+    border-left: black dashed 3px;
 }
