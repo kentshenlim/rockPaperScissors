@@ -25,19 +25,21 @@ body {
 .top-plane {
     min-width: 100%;
     margin-bottom: 2%;
+    display: flex;
+    align-items: center;
 }
 
 
 h1 {
     color: #AA6F39;
     font-family: serif;
-    max-width: 50%;
+    width: 50%;
     min-width: fit-content;
     text-align: center;
-    margin: 0 auto;
     background-image: url('img/background3.jpg');
     border-radius: 1em;
     border: #2D882D solid 5px;
+    margin: 0 auto;
 }
 
 
@@ -45,6 +47,13 @@ img {
     height: 85%;
     border: #2D882D solid 5px;
     border-radius: 1em;
+}
+
+
+#mute {
+    border: none;
+    justify-self: end;
+    margin-right: 1%;
 }
 
 
