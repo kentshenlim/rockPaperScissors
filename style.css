@@ -18,11 +18,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('img/background4.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-x;
 }
 
 
 .top-plane {
-    background-image: url('img/background3.jpg');
+    /*background-image: url('img/background3.jpg');*/
     background-position: 0% 3%;
     background-repeat: repeat-x;
     min-width: 100%;
@@ -33,9 +37,11 @@ body{
 h1{
     color: #AA6F39;
     font-family: serif;
-    background-color: white;
-    max-width: fit-content;
+    max-width: 50%;
+    text-align: center;
     margin: 0 auto;
+    background-image: url('img/background3.jpg');
+    border-radius: 1em;
 }
 
 
