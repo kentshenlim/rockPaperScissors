@@ -51,6 +51,11 @@ img {
 }
 
 
+img.clickable {
+    cursor: pointer; /*Cursor changes to pointer upon hover*/
+}
+
+
 #mute {
     border: none;
     justify-self: end;
@@ -156,8 +161,43 @@ div.restart {
 }
 
 
-button {
+/*button {
     font-size: 1em;
     border-radius: 0.5em;
     background-color:#2D882D;
+}*/
+
+
+/*Styling for pop-up window*/
+.pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%; /*Of whole screen*/
+    transform: translate(-50%, -50%); /*Of size of container*/
+    border: solid black 3px;
+    border-radius: 10px;
+    z-index: 10; /*Put a large number, so always appear on top of other elements*/
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+.pop-up-heading {
+    padding: 10px;
+    font-size: 1.25rem;
+}
+
+
+.pop-up-button {
+    cursor: pointer;
+    font-size: 1rem;
+    max-width: fit-content;
+    align-self: center;
+    border-radius: 10px;
 }
