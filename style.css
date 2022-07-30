@@ -203,6 +203,11 @@ div.restart {
 }
 
 
+.pop-up-button:hover {
+    background-color: #88cc88;
+    transition: all 0.5s;
+}
+
 #overlay {
     position: fixed;
     top: 0;
