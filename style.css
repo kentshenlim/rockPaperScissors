@@ -56,6 +56,12 @@ img.clickable {
 }
 
 
+img.clickable:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+
 #mute {
     border: none;
     justify-self: end;
