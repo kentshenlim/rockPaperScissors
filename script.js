@@ -8,7 +8,6 @@ return response;
 
 
 
-
 function getComputerChoice() {
 // Ask for computer's response: rock(1), paper(2) or scissors(3)
 // Input: none
@@ -18,7 +17,6 @@ let stringResponse;
 (response === 1) ? (stringResponse = 'Rock') : (response === 2) ? (stringResponse = 'Paper') : (stringResponse = 'Scissors');
 return stringResponse
 }
-
 
 
 
@@ -67,7 +65,6 @@ return stringResult
 
 
 
-
 /*
 function checkResponse(str) { // This will not be needed in GUI version
 // Check if valid string input by user when prompted
@@ -81,7 +78,6 @@ if (str === 'rock' || str === 'paper' || str === 'scissors') {
 return response;
 } 
 */
-
 
 
 
@@ -119,23 +115,26 @@ return finalResult;
 
 
 
-
 function victoryCheck() {
     if (userScore.textContent !== "5" && computerScore.textContent !== "5") return;
     else if (userScore.textContent === "5") {
         resultDescription.textContent = "You won! What a noob lucky dog!";
         resultDescription.style.color = "red";
-    } else if (computerScore.textContent === "5"){
-        resultDescription.textContent = "You lose! What a noob!";
+    } else if (computerScore.textContent === "5") {
+        resultDescription.textContent = "You lost! What a noob!";
         resultDescription.style.color = "red";
     }
+    btn.textContent = "Play Again";
 }
+
+
 
 
 const clickableImageList = document.querySelectorAll("img.clickable");
 const resultDescription = document.querySelector(".result>.description");
 const userScore = document.querySelector(".player.score");
 const computerScore = document.querySelector(".computer.score");
+const btn = document.querySelector("div.restart>button");
 
 clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('click', (e) => {
