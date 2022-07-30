@@ -147,3 +147,10 @@ clickableImageList.forEach(eachImage => {
 })
 
 
+/*
+const popUp = document.querySelector("div.pop-up");
+const overlay = document.querySelector("div#overlay");
+const body = document.querySelector("body");
+body.removeChild(popUp);
+body.removeChild(overlay);
+*/

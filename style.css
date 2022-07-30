@@ -173,11 +173,11 @@ div.restart {
     position: fixed;
     top: 50%;
     left: 50%; /*Of whole screen*/
-    transform: translate(-50%, -50%); /*Of size of container*/
-    border: solid black 3px;
+    transform: translate(-50%, -50%); /*Of size of container, scale(0) invisible by default*/
+    border: solid #2D882D 3px;
     border-radius: 10px;
     z-index: 10; /*Put a large number, so always appear on top of other elements*/
-    background-color: white;
+    background-color: #88cc88;
     width: 500px;
     max-width: 80%;
     min-height: 20%;
@@ -210,5 +210,5 @@ div.restart {
     left: 0;
     right: 0;
     bottom: 0; /*These four declarations push the box to whole screen*/
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.5);
 }
