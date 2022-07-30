@@ -7,6 +7,8 @@ return response;
 
 
 
+
+
 function getComputerChoice() {
 // Ask for computer's response: rock(1), paper(2) or scissors(3)
 // Input: none
@@ -16,6 +18,8 @@ let stringResponse;
 (response === 1) ? (stringResponse = 'Rock') : (response === 2) ? (stringResponse = 'Paper') : (stringResponse = 'Scissors');
 return stringResponse
 }
+
+
 
 
 
@@ -41,11 +45,11 @@ switch (true) {
     case (playerSelection === 'Paper' && computerSelection === 'Rock'):
     case (playerSelection === 'Scissors' && computerSelection === 'Paper'):
         result = 1;
-        userScore.textContent = +userScore.textContent + 1;
+        userScore.textContent = +userScore.textContent + 1; // Update score
         break;
     default:
         result = -1;
-        computerScore.textContent = +computerScore.textContent + 1;
+        computerScore.textContent = +computerScore.textContent + 1; // Update score
 }
 
 // Return a string of result
@@ -61,6 +65,10 @@ return stringResult
 } 
 
 
+
+
+
+/*
 function checkResponse(str) { // This will not be needed in GUI version
 // Check if valid string input by user when prompted
 // Input: typeof string, user response, either rock or paper or scissors
@@ -72,9 +80,13 @@ if (str === 'rock' || str === 'paper' || str === 'scissors') {
 }
 return response;
 } 
+*/
 
 
 
+
+
+/*
 function game() { // This will not be needed in GUI version
 // Play 5 rounds, keep scores, return winner
 // Input: none
@@ -102,6 +114,9 @@ for (let i = 0; i < 5; i++) {
 finalResult = finalResult + '\n' + `${playerScore}:${computerScore}`;
 return finalResult;
 }
+*/
+
+
 
 
 

@@ -1,5 +1,5 @@
 # rockPaperScissors
-Simple rock paper scissors game written to practise JavaScript
+Simple rock paper scissors game written to practise JavaScript.
 
 # Image Credit
 rock.jpg: https://www.buzzfeed.com/ryanschocket2/18-times-the-rock-was-the-funniest-person-on-twitter  
