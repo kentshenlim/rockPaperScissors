@@ -161,7 +161,3 @@ clickableImageList.forEach(eachImage => {
         victoryCheck();
     })
 })
-
-
-
-
