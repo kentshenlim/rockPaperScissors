@@ -200,6 +200,7 @@ div.restart {
     max-width: fit-content;
     align-self: center;
     border-radius: 10px;
+    border: solid #2D882D 3px;
 }
 
 

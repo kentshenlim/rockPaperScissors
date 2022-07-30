@@ -118,23 +118,30 @@ return finalResult;
 function victoryCheck() {
     if (userScore.textContent !== "5" && computerScore.textContent !== "5") return;
     else if (userScore.textContent === "5") {
-        resultDescription.textContent = "You won! What a noob lucky dog!";
-        resultDescription.style.color = "red";
+        popUpDescription.textContent = "You won! What a noob lucky dog!";
+        popUpDescription.style.color = "green";
     } else if (computerScore.textContent === "5") {
-        resultDescription.textContent = "You lost! What a noob!";
-        resultDescription.style.color = "red";
+        popUpDescription.textContent = "You lost! What a noob!";
+        popUpDescription.style.color = "red";
     }
-    btn.textContent = "Play Again";
+    body.append(popUp);
+    body.append(overlay);
 }
 
 
 
 
-const clickableImageList = document.querySelectorAll("img.clickable");
-const resultDescription = document.querySelector(".result>.description");
-const userScore = document.querySelector(".player.score");
-const computerScore = document.querySelector(".computer.score");
-const btn = document.querySelector("div.restart>button");
+const body = document.querySelector("body")
+, clickableImageList = document.querySelectorAll("img.clickable")
+, resultDescription = document.querySelector(".result>.description")
+, userScore = document.querySelector(".player.score")
+, computerScore = document.querySelector(".computer.score")
+, popUp = document.querySelector("div.pop-up")
+, overlay = document.querySelector("div#overlay")
+, popUpDescription = document.querySelector("div.pop-up-heading")
+, popUpBtn = document.querySelector("div.pop-up-button");
+body.removeChild(popUp);
+body.removeChild(overlay);
 
 clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('click', (e) => {
@@ -147,10 +154,4 @@ clickableImageList.forEach(eachImage => {
 })
 
 
-/*
-const popUp = document.querySelector("div.pop-up");
-const overlay = document.querySelector("div#overlay");
-const body = document.querySelector("body");
-body.removeChild(popUp);
-body.removeChild(overlay);
-*/
+
