@@ -201,3 +201,14 @@ div.restart {
     align-self: center;
     border-radius: 10px;
 }
+
+
+#overlay {
+    position: fixed;
+    /*opacity: 0; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /*These four declarations push the box to whole screen*/
+    background-color: rgba(0, 0, 0, 0.5)
+}
