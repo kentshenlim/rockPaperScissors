@@ -175,7 +175,7 @@ div.restart {
     left: 50%; /*Of whole screen*/
     transform: translate(-50%, -50%); /*Of size of container, scale(0) invisible by default*/
     border: solid #2D882D 3px;
-    border-radius: 10px;
+    border-radius: 20px;
     z-index: 10; /*Put a large number, so always appear on top of other elements*/
     background-color: #88cc88;
     width: 500px;

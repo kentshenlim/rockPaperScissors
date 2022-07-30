@@ -121,7 +121,7 @@ function victoryCheck() {
         popUpDescription.textContent = "You won! What a noob lucky dog!";
         popUpDescription.style.color = "green";
     } else if (computerScore.textContent === "5") {
-        popUpDescription.textContent = "You lost! What a noob!";
+        popUpDescription.textContent = "Tough luck! You lost!";
         popUpDescription.style.color = "red";
     }
     body.append(popUp);
@@ -139,9 +139,18 @@ const body = document.querySelector("body")
 , popUp = document.querySelector("div.pop-up")
 , overlay = document.querySelector("div#overlay")
 , popUpDescription = document.querySelector("div.pop-up-heading")
-, popUpBtn = document.querySelector("div.pop-up-button");
+, popUpBtn = document.querySelector("button.pop-up-button");
+
+popUpBtn.addEventListener("click", () => {
+    resultDescription.textContent = "";
+    userScore.textContent = 0;
+    computerScore.textContent = 0;
+    body.removeChild(popUp);
+    body.removeChild(overlay)
+})
+
 body.removeChild(popUp);
-body.removeChild(overlay);
+body.removeChild(overlay); // Don't show popup at beginning
 
 clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('click', (e) => {
@@ -152,6 +161,7 @@ clickableImageList.forEach(eachImage => {
         victoryCheck();
     })
 })
+
 
 
 
