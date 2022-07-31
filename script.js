@@ -57,11 +57,17 @@ switch (true) {
         result = 1;
         userScore.textContent = +userScore.textContent + 1; // Update score
         setTimeout(() => {userScore.classList.toggle('active')}, 500);
+        soundArray[0].currentTime = 0;
+        stopAllAudio();
+        soundArray[0].play();
         break;
     default:
         result = -1;
         computerScore.textContent = +computerScore.textContent + 1; // Update score
         setTimeout(() => {computerScore.classList.toggle('active')}, 500);
+        soundArray[4].currentTime = 0;
+        stopAllAudio();
+        soundArray[4].play();
 }
 
 // Return a string of result
@@ -73,7 +79,7 @@ if (result === 0) {
 } else {
     stringResult = `You lose! ${computerSelection} beats ${playerSelection}`;
 }
-return stringResult
+return stringResult;
 } 
 
 
@@ -145,6 +151,15 @@ function victoryCheck() {
 
 
 
+function stopAllAudio() { ()=> {
+    soundArray.forEach(audio => {
+        audio.pause()});
+}}
+
+
+
+
+
 const body = document.querySelector("body")
 , clickableImageList = document.querySelectorAll("img.clickable")
 , resultDescription = document.querySelector(".result>.description")
@@ -156,18 +171,22 @@ const body = document.querySelector("body")
 , popUpBtn = document.querySelector("button.pop-up-button")
 , pcRock = document.querySelector("div.computer.A > img:nth-child(1)")
 , pcPaper = document.querySelector("div.computer.A > img:nth-child(2)")
-, pcScissors = document.querySelector("div.computer.B > img:nth-child(1)");
+, pcScissors = document.querySelector("div.computer.B > img:nth-child(1)")
+, soundArray = document.getElementsByTagName('audio');
+
+
+body.removeChild(popUp);
+body.removeChild(overlay); // Don't show popup at beginning
+
 
 popUpBtn.addEventListener("click", () => {
     resultDescription.textContent = "";
     userScore.textContent = 0;
     computerScore.textContent = 0;
     body.removeChild(popUp);
-    body.removeChild(overlay)
+    body.removeChild(overlay);
 })
 
-body.removeChild(popUp);
-body.removeChild(overlay); // Don't show popup at beginning
 
 clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('mouseenter', () => {
@@ -176,6 +195,7 @@ clickableImageList.forEach(eachImage => {
         hoverSound.play();
     })
 })
+
 
 clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('click', (e) => {
@@ -186,6 +206,7 @@ clickableImageList.forEach(eachImage => {
         victoryCheck();
     })
 })
+
 
 const pcChoices = [pcRock, pcPaper, pcScissors, userScore, computerScore]; // Show which is chosen by computer
 pcChoices.forEach(choice => {
