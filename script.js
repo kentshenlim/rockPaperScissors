@@ -158,7 +158,6 @@ const body = document.querySelector("body")
 , pcPaper = document.querySelector("div.computer.A > img:nth-child(2)")
 , pcScissors = document.querySelector("div.computer.B > img:nth-child(1)");
 
-
 popUpBtn.addEventListener("click", () => {
     resultDescription.textContent = "";
     userScore.textContent = 0;
