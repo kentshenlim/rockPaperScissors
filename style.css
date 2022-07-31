@@ -29,7 +29,8 @@ body {
     margin-bottom: 2%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    gap: 20%;
 }
 
 
@@ -42,14 +43,13 @@ body {
     background-image: url('img/background3.jpg');
     border-radius: 1em;
     border: #2D882D solid 5px;
-    margin: 0 auto;
     font-size: 6vmin;
+    margin-bottom: 0;
 }
 
 
 .top-plane #mute {
     border: none;
-    justify-self: end;
     margin-right: 1%; /*No need set size, will follow .top-plane*/
 }
 
@@ -213,4 +213,10 @@ img.clickable:hover {
     right: 0;
     bottom: 0; /*These four declarations push the box to whole screen*/
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*Styling for computer choice*/
+img.unclickable.active {
+    transform: scale(1.1);
 }

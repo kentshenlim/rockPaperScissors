@@ -14,7 +14,16 @@ function getComputerChoice() {
 // Output: typeof string, either 'Rock', 'Paper', or 'Scissors'
 const response = getRandomInt(3);
 let stringResponse;
-(response === 1) ? (stringResponse = 'Rock') : (response === 2) ? (stringResponse = 'Paper') : (stringResponse = 'Scissors');
+switch (response) {
+    case 1:
+        stringResponse = 'Rock';
+        break;
+    case 2:
+        stringResponse = 'Paper';
+        break;
+    default:
+        stringResponse = 'Scissors';
+}
 return stringResponse
 }
 
