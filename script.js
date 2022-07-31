@@ -17,12 +17,15 @@ let stringResponse;
 switch (response) {
     case 1:
         stringResponse = 'Rock';
+        pcRock.classList.toggle('active');
         break;
     case 2:
         stringResponse = 'Paper';
+        pcPaper.classList.toggle('active');
         break;
     default:
         stringResponse = 'Scissors';
+        pcScissors.classList.toggle('active');
 }
 return stringResponse
 }
@@ -148,7 +151,11 @@ const body = document.querySelector("body")
 , popUp = document.querySelector("div.pop-up")
 , overlay = document.querySelector("div#overlay")
 , popUpDescription = document.querySelector("div.pop-up-heading")
-, popUpBtn = document.querySelector("button.pop-up-button");
+, popUpBtn = document.querySelector("button.pop-up-button")
+, pcRock = document.querySelector("div.computer.A > img:nth-child(1)")
+, pcPaper = document.querySelector("div.computer.A > img:nth-child(2)")
+, pcScissors = document.querySelector("div.computer.B > img:nth-child(1)");
+
 
 popUpBtn.addEventListener("click", () => {
     resultDescription.textContent = "";
@@ -170,3 +177,11 @@ clickableImageList.forEach(eachImage => {
         victoryCheck();
     })
 })
+
+const pcChoices = [pcRock, pcPaper, pcScissors];
+pcChoices.forEach(choice => {
+    choice.addEventListener('transitionend', removeTransition);
+})
+function removeTransition() {
+    this.classList.toggle('active');
+}

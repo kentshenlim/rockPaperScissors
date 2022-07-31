@@ -218,5 +218,6 @@ img.clickable:hover {
 
 /*Styling for computer choice*/
 img.unclickable.active {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    transition: all 0.4s;
 }
