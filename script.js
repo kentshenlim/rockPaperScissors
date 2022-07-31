@@ -50,9 +50,7 @@ let result;
 switch (true) {
     case (playerSelection === computerSelection):
         result = 0;
-        stopAllAudio(soundArray);
-        soundArray[5].currentTime = 0;
-        soundArray[5].play();
+        stopAllThenPlayThis(5);
         break;
     case (playerSelection === 'Rock' && computerSelection === 'Scissors'):
     case (playerSelection === 'Paper' && computerSelection === 'Rock'):
@@ -60,17 +58,13 @@ switch (true) {
         result = 1;
         userScore.textContent = +userScore.textContent + 1; // Update score
         setTimeout(() => {userScore.classList.toggle('active')}, 500);
-        stopAllAudio(soundArray);
-        soundArray[0].currentTime = 0;
-        soundArray[0].play();
+        stopAllThenPlayThis(0);
         break;
     default:
         result = -1;
         computerScore.textContent = +computerScore.textContent + 1; // Update score
         setTimeout(() => {computerScore.classList.toggle('active')}, 500);
-        stopAllAudio(soundArray);
-        soundArray[4].currentTime = 0;
-        soundArray[4].play();
+        stopAllThenPlayThis(4);
 }
 
 // Return a string of result
@@ -143,15 +137,11 @@ function victoryCheck() {
     else if (userScore.textContent === "5") {
         popUpDescription.textContent = "You won! What a noob lucky dog!";
         popUpDescription.style.color = "green";
-        stopAllAudio(soundArray);
-        soundArray[1].currentTime = 0;
-        soundArray[1].play();
+        stopAllThenPlayThis(1);
     } else if (computerScore.textContent === "5") {
         popUpDescription.textContent = "Tough luck! You lost!";
         popUpDescription.style.color = "red";
-        stopAllAudio(soundArray);
-        soundArray[2].currentTime = 0;
-        soundArray[2].play();
+        stopAllThenPlayThis(2);
     }
     body.append(popUp);
     body.append(overlay);
@@ -165,6 +155,19 @@ function stopAllAudio(audioList) {
         audio.pause();
     })
 }
+
+
+
+
+function stopAllThenPlayThis(i) {
+// Input: typeof number, integer, the index of sound in soundArray to be played
+// Output: none
+    stopAllAudio(soundArray);
+    soundArray[i].currentTime = 0;
+    soundArray[i].play();
+}
+
+
 
 
 const body = document.querySelector("body")
@@ -187,9 +190,7 @@ body.removeChild(overlay); // Don't show popup at beginning
 
 
 popUpBtn.addEventListener("click", () => {
-    stopAllAudio(soundArray);
-    soundArray[6].currentTime = 0;
-    soundArray[6].play();
+    stopAllThenPlayThis(6);
     resultDescription.textContent = "";
     userScore.textContent = 0;
     computerScore.textContent = 0;
