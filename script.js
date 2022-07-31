@@ -157,8 +157,8 @@ function victoryCheck() {
 function stopAllAudio() { ()=> {
     soundArray.forEach(audio => {
         audio.pause()});
+        audio.currentTime = 0;
 }}
-
 
 
 
@@ -183,6 +183,7 @@ body.removeChild(overlay); // Don't show popup at beginning
 
 
 popUpBtn.addEventListener("click", () => {
+    soundArray[6].play();
     resultDescription.textContent = "";
     userScore.textContent = 0;
     computerScore.textContent = 0;

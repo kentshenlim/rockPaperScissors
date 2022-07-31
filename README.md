@@ -29,4 +29,6 @@ hover.wav: https://mixkit.co/free-sound-effects/click/
 
 laugh.mp3: https://www.youtube.com/watch?v=ZC0Kx4GaO5Q  
 
-heheBoi.mp3: https://www.youtube.com/watch?v=IbL2hr7DTDM
+heheBoi.mp3: https://www.youtube.com/watch?v=IbL2hr7DTDM  
+
+replay.mp3: https://www.youtube.com/watch?v=E-XQwYGzmwQ  
