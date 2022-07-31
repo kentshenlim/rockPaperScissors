@@ -56,10 +56,12 @@ switch (true) {
     case (playerSelection === 'Scissors' && computerSelection === 'Paper'):
         result = 1;
         userScore.textContent = +userScore.textContent + 1; // Update score
+        setTimeout(() => {userScore.classList.toggle('active')}, 500);
         break;
     default:
         result = -1;
         computerScore.textContent = +computerScore.textContent + 1; // Update score
+        setTimeout(() => {computerScore.classList.toggle('active')}, 500);
 }
 
 // Return a string of result
@@ -178,7 +180,7 @@ clickableImageList.forEach(eachImage => {
     })
 })
 
-const pcChoices = [pcRock, pcPaper, pcScissors];
+const pcChoices = [pcRock, pcPaper, pcScissors, userScore, computerScore]; // Show which is chosen by computer
 pcChoices.forEach(choice => {
     choice.addEventListener('transitionend', removeTransition);
 })

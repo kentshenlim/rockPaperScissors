@@ -217,7 +217,13 @@ img.clickable:hover {
 
 
 /*Styling for computer choice*/
-img.unclickable.active {
+img.unclickable.active,
+.bottom-plane .result .score.active {
     transform: scale(1.2);
     transition: all 0.4s;
+}
+
+
+.bottom-plane .result .score.active {
+    transform: scale(2);
 }
