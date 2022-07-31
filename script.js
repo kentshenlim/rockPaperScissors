@@ -170,6 +170,14 @@ body.removeChild(popUp);
 body.removeChild(overlay); // Don't show popup at beginning
 
 clickableImageList.forEach(eachImage => {
+    eachImage.addEventListener('mouseenter', () => {
+        const hoverSound = document.querySelector("audio.hover");
+        hoverSound.currentTime = 0;
+        hoverSound.play();
+    })
+})
+
+clickableImageList.forEach(eachImage => {
     eachImage.addEventListener('click', (e) => {
         const userChoice = e.srcElement.alt; // Wrong case, but fine as playRound case-insensitive
         const computerChoice = getComputerChoice();
