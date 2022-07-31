@@ -50,6 +50,7 @@ let result;
 switch (true) {
     case (playerSelection === computerSelection):
         result = 0;
+        stopAllAudio(soundArray);
         soundArray[5].currentTime = 0;
         soundArray[5].play();
         break;
@@ -59,19 +60,17 @@ switch (true) {
         result = 1;
         userScore.textContent = +userScore.textContent + 1; // Update score
         setTimeout(() => {userScore.classList.toggle('active')}, 500);
-        if (userScore.textContent != 5) {
-            soundArray[0].currentTime = 0;
-            soundArray[0].play();
-        }
+        stopAllAudio(soundArray);
+        soundArray[0].currentTime = 0;
+        soundArray[0].play();
         break;
     default:
         result = -1;
         computerScore.textContent = +computerScore.textContent + 1; // Update score
         setTimeout(() => {computerScore.classList.toggle('active')}, 500);
-        if (computerScore.textContent != 5) {
-            soundArray[4].currentTime = 0;
-            soundArray[4].play();
-        }
+        stopAllAudio(soundArray);
+        soundArray[4].currentTime = 0;
+        soundArray[4].play();
 }
 
 // Return a string of result
@@ -144,10 +143,14 @@ function victoryCheck() {
     else if (userScore.textContent === "5") {
         popUpDescription.textContent = "You won! What a noob lucky dog!";
         popUpDescription.style.color = "green";
+        stopAllAudio(soundArray);
+        soundArray[1].currentTime = 0;
         soundArray[1].play();
     } else if (computerScore.textContent === "5") {
         popUpDescription.textContent = "Tough luck! You lost!";
         popUpDescription.style.color = "red";
+        stopAllAudio(soundArray);
+        soundArray[2].currentTime = 0;
         soundArray[2].play();
     }
     body.append(popUp);
@@ -155,6 +158,13 @@ function victoryCheck() {
 }
 
 
+
+
+function stopAllAudio(audioList) {
+    audioList.forEach(audio => {
+        audio.pause();
+    })
+}
 
 
 const body = document.querySelector("body")
@@ -169,7 +179,7 @@ const body = document.querySelector("body")
 , pcRock = document.querySelector("div.computer.A > img:nth-child(1)")
 , pcPaper = document.querySelector("div.computer.A > img:nth-child(2)")
 , pcScissors = document.querySelector("div.computer.B > img:nth-child(1)")
-, soundArray = document.getElementsByTagName('audio');
+, soundArray = document.querySelectorAll('audio');
 
 
 body.removeChild(popUp);
@@ -177,6 +187,8 @@ body.removeChild(overlay); // Don't show popup at beginning
 
 
 popUpBtn.addEventListener("click", () => {
+    stopAllAudio(soundArray);
+    soundArray[6].currentTime = 0;
     soundArray[6].play();
     resultDescription.textContent = "";
     userScore.textContent = 0;
