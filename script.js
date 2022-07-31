@@ -50,6 +50,9 @@ let result;
 switch (true) {
     case (playerSelection === computerSelection):
         result = 0;
+        soundArray[5].currentTime = 0;
+        stopAllAudio();
+        soundArray[5].play();
         break;
     case (playerSelection === 'Rock' && computerSelection === 'Scissors'):
     case (playerSelection === 'Paper' && computerSelection === 'Rock'):
