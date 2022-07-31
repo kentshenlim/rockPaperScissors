@@ -51,7 +51,6 @@ switch (true) {
     case (playerSelection === computerSelection):
         result = 0;
         soundArray[5].currentTime = 0;
-        stopAllAudio();
         soundArray[5].play();
         break;
     case (playerSelection === 'Rock' && computerSelection === 'Scissors'):
@@ -60,17 +59,19 @@ switch (true) {
         result = 1;
         userScore.textContent = +userScore.textContent + 1; // Update score
         setTimeout(() => {userScore.classList.toggle('active')}, 500);
-        soundArray[0].currentTime = 0;
-        stopAllAudio();
-        soundArray[0].play();
+        if (userScore.textContent != 5) {
+            soundArray[0].currentTime = 0;
+            soundArray[0].play();
+        }
         break;
     default:
         result = -1;
         computerScore.textContent = +computerScore.textContent + 1; // Update score
         setTimeout(() => {computerScore.classList.toggle('active')}, 500);
-        soundArray[4].currentTime = 0;
-        stopAllAudio();
-        soundArray[4].play();
+        if (computerScore.textContent != 5) {
+            soundArray[4].currentTime = 0;
+            soundArray[4].play();
+        }
 }
 
 // Return a string of result
@@ -143,22 +144,15 @@ function victoryCheck() {
     else if (userScore.textContent === "5") {
         popUpDescription.textContent = "You won! What a noob lucky dog!";
         popUpDescription.style.color = "green";
+        soundArray[1].play();
     } else if (computerScore.textContent === "5") {
         popUpDescription.textContent = "Tough luck! You lost!";
         popUpDescription.style.color = "red";
+        soundArray[2].play();
     }
     body.append(popUp);
     body.append(overlay);
 }
-
-
-
-
-function stopAllAudio() { ()=> {
-    soundArray.forEach(audio => {
-        audio.pause()});
-        audio.currentTime = 0;
-}}
 
 
 
