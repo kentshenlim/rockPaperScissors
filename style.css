@@ -2,7 +2,7 @@ html {
     font-size: 2em;
     background: url('img/background4.jpg') repeat center;
     background-size: contain;
-    height: 100vh;
+    height: 100vh; /*Full view port*/
 }
 
 
@@ -17,35 +17,97 @@ html {
 
 body {
     display: flex;
-    height: 100%;
+    height: 100%; /*Always span across whole html box*/
     flex-direction: column;
     align-items: center;
 }
 
 
 .top-plane {
-    min-width: 100%;
+    width: 100%;
+    min-width: fit-content; /*Always span across body, but never squeeze content*/
     margin-bottom: 2%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
-h1 {
+.top-plane h1 {
     color: #AA6F39;
     font-family: serif;
     width: 50%;
-    min-width: fit-content;
+    min-width: fit-content; /*50% width of .top-plane, never squeeze*/
     text-align: center;
     background-image: url('img/background3.jpg');
     border-radius: 1em;
     border: #2D882D solid 5px;
     margin: 0 auto;
+    font-size: 6vmin;
+}
+
+
+.top-plane #mute {
+    border: none;
+    justify-self: end;
+    margin-right: 1%; /*No need set size, will follow .top-plane*/
+}
+
+
+.mid-plane{
+    display: flex;
+    width: 50%;
+    min-width: fit-content; /*50% of body, force unused spaces at both sides*/
+}
+
+
+.mid-plane .player-panel,
+.mid-plane .computer-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0; /*Always fill whole .mid-plane flexbox*/
+    /*flex-basis 0, always want equal size of both panels*/
+}
+
+
+.mid-plane .player-panel .A,
+.mid-plane .computer-panel .A{
+    display: flex;
+    width: 100%; /*Of .mid-plane .player or computer-panel flexbox*/
+    min-width: fit-content;
+    justify-content: space-around;
+}
+
+
+.mid-plane .A,
+.mid-plane .B {
+    flex: 1 1 0; /*flex-basis 0, want two scissors in line*/
+}
+
+
+.mid-plane .C {
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+}
+
+
+.mid-plane .C.player {
+    background-color: #55AA55;
+} 
+
+
+.mid-plane .C.computer {
+    background-color: #88CC88;
 }
 
 
 img {
-    height: 85%;
+    max-height: 5em;
+    min-height: 1em;
+    width: auto;
+    height: auto;
     border: #2D882D solid 5px;
     border-radius: 1em;
 }
@@ -58,92 +120,25 @@ img.clickable {
 
 img.clickable:hover {
     transform: scale(1.2);
-    transition: all 0.5s;
-}
-
-
-#mute {
-    border: none;
-    justify-self: end;
-    margin-right: 1%;
-}
-
-
-.mid-plane{
-    display: flex;
-    min-width: 100%;
-    justify-content: space-evenly;
-}
-
-
-.player-panel,
-.computer-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-
-.A{
-    display: flex;
-    min-width: 100%;
-    justify-content: space-around;
-}
-
-
-.A,
-.B {
-    flex: 1 1 auto;
+    transition: all 0.4s;
 }
 
 
 .bottom-plane {
     display: flex;
     flex-direction: column;
-    min-width: 100%;
+    width: 70%;
 }
 
 
-.people,
-.result {
+.bottom-plane .result {
     display: flex;
-}
-
-
-.people div {
-    flex: 1 1 auto;
-    text-align: center;
-    font-size: 1.5em;
-    font-family: serif;
-}
-
-
-.people .player {
-    background-color: #55AA55;
-    text-align:center;
-} 
-
-
-.people .PC {
-    background-color: #88CC88;
-}
-
-
-.result {
     justify-content: space-between;
     margin-top: 1%;
 }
 
 
-.bottom-plane,
-.mid-plane,
-.top-plane {
-    flex: 1 1 auto;
-}
-
-
-.score {
+.bottom-plane .result .score {
     border: #2D882D solid 5px;
     margin: 0 2%;
     width: 2em;
@@ -152,18 +147,20 @@ img.clickable:hover {
 }
 
 
-.score.player {
+.bottom-plane .result .score.player {
     background-color: #55AA55
 }
 
 
-.score.computer {
+.bottom-plane .result .score.computer {
     background-color: #88CC88
 }
 
 
-div.restart {
-    align-self: center;
+.bottom-plane,
+.mid-plane,
+.top-plane {
+    flex: 1 1 auto;
 }
 
 
@@ -207,6 +204,7 @@ div.restart {
     background-color: #88cc88;
     transition: all 0.5s;
 }
+
 
 #overlay {
     position: fixed;
